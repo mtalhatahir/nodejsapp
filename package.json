@@ -1,0 +1,29 @@
+{
+  "name": "systemltd-form",
+  "version": "1.0.0",
+  "description": "System Limited Form",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "pm_start":"pm2 start app.js",
+    "test": "mocha 'test/**.test.js' -- --reporter mochawesome  --no-timeout --reporter-options reportDir=public/report   --reporter-options reportFilename=SeliniumTestReport && node customReportGenerator.js SeliniumTestReport.json",
+    "unit": "mocha 'test/unit.js' -- --reporter mochawesome --timeout 10000 --reporter-options reportDir=public/report --reporter-options reportFilename=UnitTestReport && node customReportGenerator.js UnitTestReport.json"
+  },
+  "author": "System Limited",
+  "license": "None",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chromedriver": "^96.0.0",
+    "express": "^4.16.2",
+    "express-handlebars": "^5.0.0",
+    "helmet": "^4.6.0",
+    "selenium-webdriver": "^4.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "mochawesome": "^7.0.1",
+    "request": "^2.88.2",
+    "zombie": "^6.1.4"
+  }
+}
