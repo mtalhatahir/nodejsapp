@@ -8,7 +8,7 @@ phases:
     commands:
       - npm install package.json
       - npm audit fix --force
-      - npm start
+      - npm pm_start
   post_build:
 
     commands:
