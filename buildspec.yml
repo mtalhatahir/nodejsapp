@@ -13,3 +13,6 @@ phases:
     on-failure: ABORT | CONTINUE
     commands:
       - echo "this is the post build stage"
+artifiacts:
+  files:
+    - "*" 
