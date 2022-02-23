@@ -1,18 +1,17 @@
 version: 0.2
 phases:
   pre_build:
-    on-failure: ABORT | CONTINUE
     commands:
       - echo "This is going to be the pre build stage\n Its the npm version"
       - npm --version
   build:
-    on-failure: ABORT | CONTINUE
     commands:
       - npm install package.json
+      - npm start
   post_build:
-    on-failure: ABORT | CONTINUE
+
     commands:
       - echo "this is the post build stage"
-artifiacts:
+artifacts:
   files:
-    - '**/*' 
+    - '**/*'
