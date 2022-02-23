@@ -15,4 +15,4 @@ phases:
       - echo "this is the post build stage"
 artifiacts:
   files:
-    - "*" 
+    - '**/*' 
