@@ -6,8 +6,5 @@ pipeline{
                 sh "npm start"
             }
         }
-        stage(){
-
-        }
     }
 }
