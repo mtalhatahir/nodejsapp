@@ -1,10 +1,17 @@
 pipeline{
-    agent any
+    agent {
+        docker {
+            image
+        }
+    }
     stages{
         stage('Build'){
             steps{
-                echo "this is from jenkins"
+                sh "npm start"
             }
+        }
+        stage(){
+
         }
     }
 }
