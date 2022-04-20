@@ -1,9 +1,25 @@
 pipeline{
     agent any
+    tools{
+        nodejs '18.0.0'
+    }
     stages{
-        stage('Build'){
+        stage('Testing-Node'){
             steps{
-                sh "node app.js"
+                sh "npm version"
+            }
+        stage('pull-data-from-git'){
+            steps{
+                sh "git credentialsId: 'GitHubCreds', url: 'https://github.com/mtalhatahir/nodejsapp.git'"
+            }
+        }
+        stage('Building-App'){
+            steps{
+                sh "npm install package.json"
+            }
+        stage('Run-App'){
+            steps{
+                sh "npm start"
             }
         }
     }
