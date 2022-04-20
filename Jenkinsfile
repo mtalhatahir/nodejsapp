@@ -20,8 +20,10 @@ pipeline{
             }
         }*/
         stage(deploy){
+            steps{
             sshagent(['admin1']) {
                 sh 'ls'
+                }
             }
         }
         /*stage('Run-App'){
