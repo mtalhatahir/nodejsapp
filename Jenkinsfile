@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools{
-        nodejs-jenkins '18.0.0'
+        nodejsjenkins '18.0.0'
     }
     stages{
         stage('Testing-Node'){
