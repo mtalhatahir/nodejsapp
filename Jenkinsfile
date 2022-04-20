@@ -22,7 +22,9 @@ pipeline{
         stage(deploy){
             steps{
             sshagent(['admin1']) {
-                sh 'ls'
+                sh '''ls -al
+                
+                '''
                 }
             }
         }
