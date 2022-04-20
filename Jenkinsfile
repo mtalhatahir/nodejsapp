@@ -8,6 +8,7 @@ pipeline{
             steps{
                 sh "npm version"
             }
+        }
         stage('pull-data-from-git'){
             steps{
                 sh "git credentialsId: 'GitHubCreds', url: 'https://github.com/mtalhatahir/nodejsapp.git'"
@@ -17,10 +18,12 @@ pipeline{
             steps{
                 sh "npm install package.json"
             }
+        }
         stage('Run-App'){
             steps{
                 sh "npm start"
             }
         }
     }
+
 }
