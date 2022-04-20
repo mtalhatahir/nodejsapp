@@ -22,7 +22,7 @@ pipeline{
         stage(deploy){
             steps{
             sshagent(['admin1']) {
-                sh '''ssh -tt -o StrictHostKeyChecking=no admin1@192.168.117.128 "ls -al" 
+                sh '''ssh -tt -o StrictHostKeyChecking=no admin1@192.168.117.128 "cd Deployments/NodeJs/ git clone https://github.com/mtalhatahir/nodejsapp.git; npm install package.json; pm2 start app.js"
                 
                 '''
                 }
@@ -30,7 +30,7 @@ pipeline{
         }
         /*stage('Run-App'){
             steps{
-                sh "npm start"
+                sh "pm2 start app.js"
             }
         }*/
     }
