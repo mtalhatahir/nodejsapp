@@ -11,7 +11,7 @@ pipeline{
         }
         stage('pull-data-from-git'){
             steps{
-                sh "git credentialsId: 'GitHubCreds', url: 'https://github.com/mtalhatahir/nodejsapp.git'"
+                git credentialsId: 'GitHubCreds', url: 'https://github.com/mtalhatahir/nodejsapp.git'
             }
         }
         stage('Building-App'){
