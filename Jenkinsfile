@@ -22,7 +22,7 @@ pipeline{
         stage(deploy){
             steps{
             sshagent(['admin1']) {
-                sh '''ssh -tt - StrictHostKeyChecking=no admin1@192.168.117.128 "ls -al" 
+                sh '''ssh -tt -o StrictHostKeyChecking=no admin1@192.168.117.128 "ls -al" 
                 
                 '''
                 }
