@@ -24,11 +24,11 @@ pipeline{
                 sh 'ls'
             }
         }
-        stage('Run-App'){
+        /*stage('Run-App'){
             steps{
                 sh "npm start"
             }
-        }
+        }*/
     }
 
 }
