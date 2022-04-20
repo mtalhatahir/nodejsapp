@@ -4,7 +4,7 @@ pipeline{
         nodejs 'nodejsjenkins'
     }
     stages{
-        stage('Testing-Node'){
+        /*stage('Testing-Node'){
             steps{
                 sh "npm version"
             }
@@ -17,6 +17,11 @@ pipeline{
         stage('Building-App'){
             steps{
                 sh "npm install package.json"
+            }
+        }*/
+        stage(deploy){
+            sshagent(['admin1']) {
+                sh 'ls'
             }
         }
         stage('Run-App'){
