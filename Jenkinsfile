@@ -21,11 +21,11 @@ pipeline{
         }*/
         stage(deploy){
             steps{
-            sshagent(['admin1']) {
+            //sshagent(['admin1']) {}
                 sh '''ls -al
                 
                 '''
-                }
+                
             }
         }
         /*stage('Run-App'){
